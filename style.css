@@ -359,7 +359,7 @@ main {
     background: var(--bg-white);
     border: 1px solid var(--border-color);
     border-radius: 1rem;
-    padding: 2rem;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -391,15 +391,15 @@ main {
 .pricing-card h3 {
     font-size: 1.5rem;
     color: var(--text-dark);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .pricing-card .price {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .pricing-card .amount {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: var(--text-dark);
 }
@@ -412,12 +412,12 @@ main {
 
 .pricing-card .features {
     list-style: none;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     flex-grow: 1;
 }
 
 .pricing-card .features li {
-    padding: 0.75rem 0;
+    padding: 0.5rem 0;
     color: var(--text-dark);
     border-bottom: 1px solid var(--border-color);
 }
