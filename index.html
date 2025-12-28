@@ -30,7 +30,7 @@
         <div class="sidebar-logo">CloudSync</div>
         <h2>Menu</h2>
         <ul>
-            <li><a href="#home">Home</a></li>
+            <li><a href="#hero">Home</a></li>
             <li><a href="#features">Features</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#faq">FAQ</a></li>
@@ -39,11 +39,72 @@
     </nav>
 
     <main>
-        <header class="hero">
+        <header class="hero" id="hero">
             <h1>CloudSync</h1>
             <p class="subtitle">Store, sync, and share your files effortlessly across all your devices</p>
             <button popovertarget="signup-modal" class="cta-button">Create Account</button>
         </header>
+
+        <section class="features" id="features">
+            <h2>Why Choose CloudSync?</h2>
+            <p class="features-subtitle">Everything you need to keep your files safe, synced, and accessible</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Automatic Sync</h3>
+                    <p>Your files are automatically synced across all your devices in real-time. Never worry about outdated versions again.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Military-Grade Encryption</h3>
+                    <p>Your data is protected with AES-256 encryption both in transit and at rest. Your privacy is our priority.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Easy Sharing</h3>
+                    <p>Share files and folders with anyone via secure links. Set permissions and expiration dates for added control.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">💾</div>
+                    <h3>Automatic Backup</h3>
+                    <p>Set it and forget it. Your important files are automatically backed up to the cloud without any manual effort.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⏮️</div>
+                    <h3>Version History</h3>
+                    <p>Restore previous versions of your files anytime. Accidental changes are never permanent with our version control.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Team Collaboration</h3>
+                    <p>Work together seamlessly with real-time collaboration tools, comments, and shared workspaces.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Access</h3>
+                    <p>Access your files from anywhere with our mobile apps for iOS and Android. Your files are always at your fingertips.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Our optimized infrastructure ensures blazing fast uploads and downloads, no matter where you are in the world.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Smart Search</h3>
+                    <p>Find any file instantly with our powerful search engine that indexes content, names, and metadata.</p>
+                </div>
+            </div>
+        </section>
 
         <section class="pricing" id="pricing">
             <h2>Pricing</h2>
@@ -117,6 +178,49 @@
                 <summary>Can I access my files offline?</summary>
                 <p>Yes! Our desktop and mobile apps allow you to mark files and folders for offline access. These files will be automatically synced when you reconnect to the internet, ensuring you always have access to your important documents wherever you are.</p>
             </details>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2>Get in Touch</h2>
+            <p class="contact-subtitle">Have questions? We'd love to hear from you.</p>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <p><a href="mailto:support@cloudsync.com">support@cloudsync.com</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>Phone</h3>
+                        <p><a href="tel:+1-555-123-4567">+1 (555) 123-4567</a></p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>Office</h3>
+                        <p>123 Cloud Street<br>San Francisco, CA 94105<br>United States</p>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="contact-name">Name</label>
+                        <input type="text" id="contact-name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-email">Email</label>
+                        <input type="email" id="contact-email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
         </section>
 
         <dialog popover id="signup-modal">
@@ -219,7 +323,61 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 CloudSync. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CloudSync</h3>
+                <p>Your modern storage solution for seamless file management across all devices.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Product</h4>
+                <ul>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#security">Security</a></li>
+                    <li><a href="#integrations">Integrations</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#press">Press Kit</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="#docs">Documentation</a></li>
+                    <li><a href="#help">Help Center</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#cookies">Cookie Policy</a></li>
+                    <li><a href="#gdpr">GDPR</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 CloudSync. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#twitter" aria-label="Twitter">Twitter</a>
+                <a href="#linkedin" aria-label="LinkedIn">LinkedIn</a>
+                <a href="#github" aria-label="GitHub">GitHub</a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
