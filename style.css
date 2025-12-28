@@ -18,7 +18,7 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--bg-light);
@@ -29,19 +29,86 @@ main {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+    padding-top: 5rem; /* Account for fixed top nav */
+}
+
+/* Top Navigation Bar */
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4rem;
+    background: transparent;
+    border-bottom: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    z-index: 999;
+}
+
+.top-nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.top-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-cta-btn {
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 0.625rem 1.25rem;
+    border-radius: 1.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.nav-cta-btn:hover {
+    background: var(--primary-hover);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-1px);
 }
 
 /* Menu Toggle Button */
 .menu-toggle {
     position: fixed;
-    top: 1.5rem;
-    left: 1.5rem;
-    z-index: 1000;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1001;
     background: transparent;
     border: none;
     padding: 0.5rem;
     cursor: pointer;
-    display: flex;
+    display: none; /* Hidden by default on desktop */
     flex-direction: column;
     gap: 0.375rem;
     transition: var(--transition);
@@ -66,30 +133,65 @@ main {
     padding: 0;
     height: 100vh;
     width: 280px;
-    background: var(--bg-white);
+    background: transparent;
     border: none;
-    border-right: 1px solid var(--border-color);
-    box-shadow: var(--shadow-lg);
-    translate: -100vw;
+    border-right: none;
+    box-shadow: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    translate: 0; /* Visible by default on desktop */
     transition: translate 0.3s cubic-bezier(0.4, 0, 0.2, 1), overlay 0.3s allow-discrete, display 0.3s allow-discrete;
-    inset: 0;
 }
 
-#menu:popover-open {
-    translate: 0;
+.sidebar-logo {
+    padding: 1.5rem 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-@starting-style {
+/* Mobile popover behavior */
+@media (max-width: 767px) {
+    #menu {
+        translate: -100vw; /* Hidden by default on mobile */
+        top: 0;
+        height: 100vh;
+        background: var(--bg-white); /* Add background on mobile for better visibility */
+        box-shadow: var(--shadow-lg);
+    }
+
     #menu:popover-open {
-        translate: -100vw;
+        translate: 0;
+    }
+
+    @starting-style {
+        #menu:popover-open {
+            translate: -100vw;
+        }
+    }
+
+    /* Hide sidebar logo on mobile, show in top nav */
+    .sidebar-logo {
+        display: none;
+    }
+
+    .top-nav-left .logo {
+        display: block;
     }
 }
 
 #menu h2 {
-    padding: 2rem 1.5rem 1rem;
-    font-size: 1.25rem;
-    color: var(--text-dark);
-    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 1.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: none;
 }
 
 #menu ul {
@@ -103,15 +205,19 @@ main {
 
 #menu a {
     display: block;
-    padding: 0.875rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     color: var(--text-dark);
     text-decoration: none;
+    font-weight: 500;
+    border-radius: 1rem;
+    margin: 0.25rem 1rem;
     transition: var(--transition);
 }
 
 #menu a:hover {
-    background: var(--bg-light);
+    background: var(--bg-white);
     color: var(--primary-color);
+    box-shadow: var(--shadow);
 }
 
 /* Hero Section */
@@ -132,7 +238,7 @@ main {
 }
 
 .subtitle {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     color: var(--text-light);
     margin-bottom: 2.5rem;
     max-width: 600px;
@@ -148,7 +254,7 @@ main {
     padding: 1rem 2.5rem;
     font-size: 1.125rem;
     font-weight: 600;
-    border-radius: 0.5rem;
+    border-radius: 1.5rem;
     cursor: pointer;
     box-shadow: var(--shadow);
     transition: var(--transition);
@@ -315,7 +421,7 @@ details p {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     transition: var(--transition);
 }
 
@@ -390,7 +496,7 @@ select:focus {
     padding: 0.875rem;
     font-size: 1rem;
     font-weight: 600;
-    border-radius: 0.5rem;
+    border-radius: 1.5rem;
     cursor: pointer;
     transition: var(--transition);
 }
@@ -415,18 +521,50 @@ footer {
 
 /* Responsive Design */
 @media (min-width: 768px) {
+    /* Sidebar always visible on desktop */
     #menu {
-        position: fixed;
-        left: 0;
-        top: 0;
+        display: block !important; /* Force sidebar to show on desktop despite popover */
     }
 
-    body:has(#menu:popover-open) {
-        margin-left: 280px;
+    /* Hide logo in top nav on desktop, show in sidebar */
+    .top-nav-left .logo {
+        display: none;
+    }
+
+    .sidebar-logo {
+        display: block;
     }
 }
 
 @media (max-width: 767px) {
+    /* Show menu toggle on mobile */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Adjust top nav for mobile */
+    .top-nav {
+        padding: 0 1rem 0 5rem; /* Extra left padding to avoid menu toggle */
+    }
+
+    .top-nav-left .logo {
+        font-size: 1.25rem;
+    }
+
+    /* Adjust spacing and sizing on mobile */
+    .top-nav-right {
+        gap: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.875rem;
+    }
+
+    .nav-cta-btn {
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
+    }
+
     .hero h1 {
         font-size: 2.5rem;
     }
@@ -441,5 +579,6 @@ footer {
 
     main {
         padding: 1rem;
+        padding-top: 5rem;
     }
 }
