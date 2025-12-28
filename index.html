@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudSync - Your Modern Storage Solution</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button popovertarget="menu" class="menu-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <nav popover id="menu">
+        <h2>Menu</h2>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <header class="hero">
+            <h1>CloudSync</h1>
+            <p class="subtitle">Store, sync, and share your files effortlessly across all your devices</p>
+            <button popovertarget="signup-modal" class="cta-button">Create Account</button>
+        </header>
+
+        <section class="faq" id="faq">
+            <h2>Frequently Asked Questions</h2>
+
+            <details name="faq-group" open>
+                <summary>How secure is my data?</summary>
+                <p>Your data is protected with end-to-end encryption using AES-256 encryption standards. We employ multiple layers of security including secure data centers, regular security audits, and two-factor authentication to ensure your files remain private and secure.</p>
+            </details>
+
+            <details name="faq-group">
+                <summary>What storage plans do you offer?</summary>
+                <p>We offer flexible plans starting from 5GB free storage for personal use. Premium plans include 100GB for $4.99/month, 1TB for $9.99/month, and unlimited storage for teams at $19.99/user/month. All plans include unlimited file sharing and 30-day version history.</p>
+            </details>
+
+            <details name="faq-group">
+                <summary>Can I access my files offline?</summary>
+                <p>Yes! Our desktop and mobile apps allow you to mark files and folders for offline access. These files will be automatically synced when you reconnect to the internet, ensuring you always have access to your important documents wherever you are.</p>
+            </details>
+        </section>
+
+        <dialog popover id="signup-modal">
+            <div class="modal-header">
+                <h2>Create Your Account</h2>
+                <button popovertarget="signup-modal" class="close-button" aria-label="Close modal">&times;</button>
+            </div>
+
+            <form>
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" required autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required autocomplete="new-password" minlength="8">
+                </div>
+
+                <div class="form-group">
+                    <label for="browser">Preferred Browser</label>
+                    <input type="text"
+                           list="browsers"
+                           id="browser"
+                           name="browser"
+                           autocomplete="off">
+                    <datalist id="browsers">
+                        <option value="Arc"></option>
+                        <option value="Brave"></option>
+                        <option value="Chrome"></option>
+                        <option value="DuckDuckGo"></option>
+                        <option value="Firefox"></option>
+                        <option value="Microsoft Edge"></option>
+                        <option value="Opera"></option>
+                        <option value="Safari"></option>
+                        <option value="Tor"></option>
+                        <option value="Vivaldi"></option>
+                    </datalist>
+                </div>
+
+                <div class="form-group">
+                    <label for="quantity">Number of Devices</label>
+                    <input type="number"
+                           list="quantity-options"
+                           id="quantity"
+                           name="quantity"
+                           min="1"
+                           value="1">
+                    <datalist id="quantity-options">
+                        <option value="1"></option>
+                        <option value="2"></option>
+                        <option value="5"></option>
+                        <option value="10"></option>
+                        <option value="20"></option>
+                        <option value="50"></option>
+                    </datalist>
+                </div>
+
+                <div class="form-group">
+                    <label for="appointment">Preferred Onboarding Time</label>
+                    <input type="time"
+                           list="appointments"
+                           id="appointment"
+                           name="appointment">
+                    <datalist id="appointments">
+                        <option value="12:00"></option>
+                        <option value="13:00"></option>
+                        <option value="14:00"></option>
+                    </datalist>
+                </div>
+
+                <div class="form-group">
+                    <label for="plan">Storage Plan</label>
+                    <select id="plan" name="plan">
+                        <option value="free">Free (5GB)</option>
+                        <option value="basic">Basic (100GB)</option>
+                        <option value="pro">Pro (1TB)</option>
+                        <option value="business">Business (Unlimited)</option>
+                    </select>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">Subscribe to newsletter</label>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">I agree to the Terms of Service and Privacy Policy</label>
+                </div>
+
+                <button type="submit" class="submit-button">Create Account</button>
+            </form>
+        </dialog>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CloudSync. All rights reserved.</p>
+    </footer>
+</body>
+</html>
